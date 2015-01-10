@@ -1,0 +1,25 @@
+{
+  "name": "jeans",
+  "version": "1.0.0",
+  "description": "A genetic algorithm library",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DingoEatingFuzz/jeans"
+  },
+  "keywords": [
+    "genetic-algorithm"
+  ],
+  "author": "Michael Lange",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DingoEatingFuzz/jeans/issues"
+  },
+  "homepage": "https://github.com/DingoEatingFuzz/jeans",
+  "devDependencies": {
+    "chai": "^1.10.0",
+  }
+}
