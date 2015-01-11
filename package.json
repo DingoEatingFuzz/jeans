@@ -21,5 +21,6 @@
   "homepage": "https://github.com/DingoEatingFuzz/jeans",
   "devDependencies": {
     "chai": "^1.10.0",
+    "lodash": "^2.4.1"
   }
 }
