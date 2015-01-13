@@ -45,9 +45,6 @@ module.exports = jeans.extend({
 
     return 1 / (1 + Math.abs(target - sum));
   },
-  success: function(individual) {
-    return this.fitnessFor(individual) === 0;
-  },
   mutators: {
     coins: function(arr) {
       arr.forEach(function(v, i, a) {
@@ -57,6 +54,7 @@ module.exports = jeans.extend({
           a[i] = randomCoin();
         }
       }, this);
+      return arr;
     }
   }
 });

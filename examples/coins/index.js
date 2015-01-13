@@ -2,9 +2,9 @@ var Coins = require('./coins');
 
 // Create an instance of our Coins genetic algorithm
 var ga = new Coins({
-  populationSize : 1000,
+  populationSize : 250,
   mutationRate   : 0.2,
-  elitismBias    : 0.2
+  elitismBias    : 0
 });
 
 // The match property is undefined until something meets the success criteria
