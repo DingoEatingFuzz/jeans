@@ -11,7 +11,6 @@ var ga = new Coins({
 while(!ga.match) {
   ga.step();
   console.log('Generation: ' + ga.generation + ' Best Fitness: ' + ga.fitnessFor(ga.best));
-  console.log('\t' + ga.best.coins.join(', '));
 }
 
 console.log('\n\n');
