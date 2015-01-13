@@ -24,3 +24,9 @@ This is a barebones implementation that supports crossover, mutation, and elitis
 - `mutator function` - A function that takes the data for a chromosome and the `mutationRate`
 - `spawn` - A function that takes no arguments that creates a new individual. This is called on init n times, where n is the population size
 - `reproduce` - A function that takes two arguments, where each argument is an individual
+
+#### Examples
+
+Check out the examples directory for simple usages of genetic algorithms (and jeans).
+
+**Coins** - Find a collection of 100 coins that adds up to $5. For fun, require that one coin be a dollar coin.
