@@ -1,7 +1,7 @@
-var jeans = require('jeans');
+var jeans = require('../../lib/jeans');
 var _ = require('lodash');
 
-var coinMap: function() {
+var coinMap = {
   P : 1,
   N : 5,
   D : 10,
@@ -12,6 +12,7 @@ var coinMap: function() {
 
 var target = 500;
 var numCoins = 100;
+var MAX_AMOUNT = numCoins * coinMap['$'];
 
 var coinKeys = Object.keys(coinMap);
 
@@ -37,14 +38,12 @@ module.exports = jeans.extend({
     };
   },
   fitnessFor: function(individual) {
-    // fitness is how far the amount is from the target amount
-    return Math.abs(targetAmount - individual
+    // fitness is the inverse of how far the amount is from the target amount
+    var sum = individual.coins
       .map(function(n) { return coinMap[n]; })
-      .reduce(function(s, n) { return s + n; }, 0));
-  },
-  fitnessSorter: function(a, b) {
-    // override fitness sorter to sort low - high
-    return this.fitnessFor(b) - this.fitnessFor(a);
+      .reduce(function(s, n) { return s + n; }, 0);
+
+    return 1 / (1 + Math.abs(target - sum));
   },
   success: function(individual) {
     return this.fitnessFor(individual) === 0;

@@ -1,4 +1,4 @@
-var Coins = require('coins');
+var Coins = require('./coins');
 
 // Create an instance of our Coins genetic algorithm
 var ga = new Coins({
