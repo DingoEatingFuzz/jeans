@@ -12,7 +12,6 @@ var coinMap = {
 
 var target = 500;
 var numCoins = 100;
-var MAX_AMOUNT = numCoins * coinMap['$'];
 
 var coinKeys = Object.keys(coinMap);
 
@@ -43,7 +42,11 @@ module.exports = jeans.extend({
       .map(function(n) { return coinMap[n]; })
       .reduce(function(s, n) { return s + n; }, 0);
 
-    return 1 / (1 + Math.abs(target - sum));
+    var f = 1 / (1 + Math.abs(target - sum));
+    if (individual.coins.indexOf('$') === -1) {
+      f -= 0.2;
+    }
+    return f;
   },
   mutators: {
     coins: function(arr) {
